@@ -1,4 +1,5 @@
 from datetime import date
+from weather import forecast
 
 # flow: get date > check area temps > determine if good conditions > display results
 today = date.today()
