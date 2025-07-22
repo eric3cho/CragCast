@@ -10,8 +10,27 @@ cache_session = requests_cache.CachedSession('.cache', expire_after=3600)
 retry_session = retry(cache_session, retries=5, backoff_factor=0.2)
 openmeteo = openmeteo_requests.Client(session=retry_session)
 
+locations = ["goldbar", "index", "leavenworth", "squamish"]
+lat = [47.84769, 47.82481, 47.5967, 49.68218]
+lon = [-121.60991, -121.56191, -120.65936, -123.14798]
+
 
 def forecast():
     url = "https://api.open-meteo.com/v1/forecast"
+    params = {
+        "latitude": lat,
+        "longitude": lon,
+        "hourly": [
+            "temperature_2m",
+            "wind_speed_10m",
+            "precipitation",
+            "cloudcover",
+            "relative_humidity_2m",
+            "weathercode"
+        ],
+        "forecast_days": 16,
+        "timezone": "auto"
+    }
+
 
 
