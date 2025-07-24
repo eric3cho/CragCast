@@ -18,8 +18,8 @@ lon = [-121.60991, -121.56191, -120.65936, -123.14798]
 def forecast():
     url = "https://api.open-meteo.com/v1/forecast"
     params = {
-        "latitude": lat,
-        "longitude": lon,
+        "latitude": 47.84769,
+        "longitude": 121.60991,
         "hourly": [
             "temperature_2m",
             "wind_speed_10m",
@@ -31,6 +31,9 @@ def forecast():
         "forecast_days": 16,
         "timezone": "auto"
     }
+    responses = openmeteo.weather_api(url, params=params)
+    print(responses)
+
 
 
 

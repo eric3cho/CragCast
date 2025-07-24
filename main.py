@@ -5,6 +5,6 @@ from weather import forecast
 today = date.today()
 print("Today is " + str(today) + ". I can CragCast up to 16 days in advance.")
 days = input("What days are you climbing? Put in form 'start,end' (i.e. 11,13): ")
-
+forecast()
 
 
