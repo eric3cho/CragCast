@@ -3,8 +3,13 @@ from weather import forecast
 
 # flow: get date > check area temps > determine if good conditions > display results
 today = date.today()
-print("Today is " + str(today) + ". I can CragCast up to 16 days in advance.")
-days = input("What days are you climbing? Put in form 'start,end' (i.e. 11,13): ")
-forecast()
+print(today)
+
+print("CragCast can forecast up to 16 days ahead. If only climbing for one day, put the same date.")
+print("Put dates in form: 2025-08-11")
+# handle date form or have it input correctly?
+start = input("start date: ")
+end = input("end date: ")
+forecast(start, end)
 
 
