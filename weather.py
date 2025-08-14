@@ -17,12 +17,12 @@ locations = {
     "squamish": (49.68218, -123.14798)
 }
 
-
 def forecast(start, end):
-    url = "https://api.open-meteo.com/v1/forecast"
+    results = []
+
     params = {
-        "latitude": 47.84769,
-        "longitude": -121.60991,
+        "latitude": lat,
+        "longitude": lon,
         "hourly": [
             "temperature_2m",
             "wind_speed_10m",
@@ -37,7 +37,7 @@ def forecast(start, end):
         "forecast_days": 3,
         "timezone": "auto"
     }
-    responses = openmeteo.weather_api(url, params=params)
+    responses = openmeteo.weather_api("https://api.open-meteo.com/v1/forecast", params=params)
 
     # process hourly data
     response = responses[0]
