@@ -20,6 +20,8 @@ locations = {
 def forecast(start, end):
     results = []
 
+    for name, (lat, lon) in locations.items():
+
     params = {
         "latitude": lat,
         "longitude": lon,
